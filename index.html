@@ -1,0 +1,670 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, MaDlamini 💗</title>
+
+    <!-- Elegant fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* =========================
+           GENERAL STYLING
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(
+                135deg,
+                #fff0f5,
+                #fce4ec,
+                #f3e5f5
+            );
+            color: #5b3047;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --pink: #e75480;
+            --dark-pink: #c2185b;
+            --light-pink: #fff0f5;
+            --purple: #a855a0;
+            --white: #ffffff;
+        }
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .hearts-container {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            animation: floatUp linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .small-heading {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(55px, 10vw, 105px);
+            font-weight: normal;
+            color: var(--pink);
+            line-height: 1.2;
+            text-shadow: 2px 4px 15px rgba(231, 84, 128, 0.15);
+        }
+
+        .hero h2 {
+            font-size: clamp(16px, 3vw, 23px);
+            font-weight: 300;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            max-width: 520px;
+            line-height: 1.9;
+            font-size: 14px;
+            margin: 20px auto 30px;
+            color: #85546c;
+        }
+
+        /* =========================
+           PHOTO FRAME
+        ========================= */
+
+        .photo-frame {
+            width: 250px;
+            height: 310px;
+            padding: 9px;
+            margin: 25px auto;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f8bbd0,
+                #e1bee7
+            );
+            border-radius: 150px 150px 25px 25px;
+            box-shadow: 0 15px 45px rgba(194, 24, 91, 0.18);
+            position: relative;
+            transition: transform 0.4s ease;
+        }
+
+        .photo-frame:hover {
+            transform: translateY(-8px) rotate(2deg);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 145px 145px 20px 20px;
+            display: block;
+            background: #fce4ec;
+        }
+
+        .photo-caption {
+            margin-top: 10px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #a05279;
+        }
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .btn {
+            display: inline-block;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background: linear-gradient(
+                135deg,
+                #e75480,
+                #ba68c8
+            );
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(231, 84, 128, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(231, 84, 128, 0.4);
+        }
+
+        /* =========================
+           BIRTHDAY MESSAGE SECTION
+        ========================= */
+
+        .message-section {
+            position: relative;
+            z-index: 1;
+            padding: 90px 20px;
+            background: rgba(255, 255, 255, 0.48);
+            text-align: center;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--dark-pink);
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+
+        .message-section h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(42px, 7vw, 65px);
+            font-weight: normal;
+            color: var(--pink);
+            margin-bottom: 25px;
+        }
+
+        .message-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.82);
+            border: 1px solid rgba(231, 84, 128, 0.15);
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(130, 60, 100, 0.08);
+        }
+
+        .message-card p {
+            font-size: 15px;
+            line-height: 2.1;
+            color: #795064;
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: var(--pink);
+            margin-top: 25px;
+        }
+
+        /* =========================
+           SURPRISE SECTION
+        ========================= */
+
+        .surprise-section {
+            position: relative;
+            z-index: 1;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .surprise-section h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(40px, 7vw, 60px);
+            color: var(--pink);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .surprise-section p {
+            color: #85546c;
+            margin-bottom: 25px;
+            line-height: 1.9;
+            font-size: 14px;
+        }
+
+        #surpriseMessage {
+            display: none;
+            max-width: 650px;
+            margin: 35px auto 0;
+            padding: 35px 25px;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(130, 60, 100, 0.12);
+            animation: appear 0.8s ease;
+        }
+
+        #surpriseMessage h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: var(--pink);
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        #surpriseMessage p {
+            line-height: 2;
+            margin-bottom: 0;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 30px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            color: #a05279;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           MOBILE RESPONSIVENESS
+        ========================= */
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 45px 18px;
+            }
+
+            .photo-frame {
+                width: 215px;
+                height: 275px;
+            }
+
+            .message-card {
+                padding: 28px 22px;
+            }
+
+            .message-card p {
+                font-size: 13px;
+            }
+
+            .small-heading {
+                letter-spacing: 3px;
+                font-size: 10px;
+            }
+        }
+
+        /* Respect reduced-motion settings */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts in the background -->
+    <div class="hearts-container" id="hearts"></div>
+
+    <!-- =========================
+         HERO / INTRODUCTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="small-heading">
+            A little something just for you ♡
+        </div>
+
+        <h1>Happy Birthday</h1>
+
+        <!-- CHANGE HER NAME HERE -->
+        <h2>To iSosha Lam, MaDlamini 💗</h2>
+
+        <p>
+            Today is all about celebrating you, your beautiful soul,
+            your smile, and the wonderful person you are.
+            You deserve all the happiness this world has to offer.
+        </p>
+
+        <!--
+            TO ADD HER PICTURE:c:\Users\Administrator\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\DC5F5262D1B018C77AD13E823BCAF48382D54346\transfers\2026-42\WhatsApp Image 2026-10-16 at 00.19.56.jpeg
+            Put your photo in this folder and name it girl.jpg.
+            Or change "girl.jpg" below to your picture's filename.
+        -->
+
+        <div class="photo-frame">
+            <img src="girl.jpeg.jpeg"
+                 alt="A beautiful birthday girl"
+                 
+    
+
+        <div class="photo-caption">
+            TODAY IS YOUR SPECIAL DAY ✨
+        </div>
+
+        
+        
+
+
+        <a href="#birthdayMessage" class="btn">
+            A Message For You 💌
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         PERSONAL BIRTHDAY MESSAGE
+    ========================== -->
+
+    <section class="message-section" id="birthdayMessage">
+
+        <div class="section-label">
+            From my heart to yours
+        </div>
+
+        <h2>A Letter For You</h2>
+
+        <div class="message-card">
+
+            <!-- EDIT THIS MESSAGE TO MAKE IT PERSONAL -->
+
+            <p>
+                Happy Purpose Reminder Day, Sis Sosha! ❤️
+            </p>
+
+            <p>
+                On this special day, I just want to remind you how
+                amazing you are.For the little time ive known you, You have a way of making my days
+                a little brighter simply by being yourself, and I hope
+                you never forget how special you truly are.
+            </p>
+
+            <p>
+                May this new chapter of your life the second floor bring you endless
+                happiness, beautiful memories, genuine love, exciting
+                opportunities, and every blessing your heart desires.
+                May you always have reasons to smile and the courage
+                to chase every dream you hold close to your heart.
+            </p>
+
+            <p>
+    You deserve to be celebrated not just today, but every
+                day. Never stop being the wonderful person you
+                are, and never let this world dim the light that makes
+                you uniquely you.
+            </p>
+
+            <p>
+                I hope today reminds you of how loved, appreciated,
+                and special you are. Keep smiling, keep shining, and
+                keep being the beautiful soul that you are.
+            </p>
+
+            <p>
+                Here's to another year of laughter, unforgettable
+                moments, new adventures, and beautiful memories.
+                May all the little things you've been wishing for
+                find their way to you.  Ume ngamandla westhunywa keh dhiye njalo
+            </p>
+
+            <p>
+                Enjoy every moment of your special day. Welcome to the second floor of your life, and may it be filled with love, joy, and endless blessings.
+                You deserve nothing less than the very best. 💐
+            </p>
+
+            <div class="signature">
+                love loads and always Sosha lam ♡
+                Yanga umfihlakalo angakugcina abe nawe 
+            </div>
+
+            <!-- CHANGE THE SIGNATURE ABOVE IF YOU WANT -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SPECIAL SURPRISE
+    ========================== -->
+
+    <section class="surprise-section">
+
+        <div class="section-label">
+            One last little surprise
+        </div>
+
+        <h2>Something Special For You 💕</h2>
+
+        <p>
+            Because uthe gabhu ndim you deserves a little
+            extra thing or love or something differnt rather on your birthday just to make your day.
+        </p>
+
+        <button class="btn" id="surpriseButton" onclick="revealSurprise()">
+            Open Your Surprise 🎁
+        </button>
+
+        <div id="surpriseMessage">
+
+            <h3>You Are Truly Special! 💖</h3>
+
+            <p>
+                If I could give you one thing in this world, it would
+                be the ability to see yourself through the eyes of
+                the people who appreciate you. Then you would
+                understand just how beautiful, precious, and
+                extraordinary you really are. And hopefully ngekhe ungisanganele someday ubone abancono (which you probably might ) but for the time being usase nam ungangibuzi kuthi kanjani, just know that you are loved and appreciated more than words can express.
+                <br><br>
+                May your birthday be filled with love, your heart
+                with peace, and your future with beautiful things
+                you never even imagined.
+                <br><br>
+                Never forget how special you are to me and your loved ones. Happy Purpose Reminder Day, and may this year bring you all the joy, love, and success you deserve.
+                once again, MaDlamini! 🎂🌷💗
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        Made with love, just for you 💗
+        <br><br>
+        ♡ A special day for a special soul ♡
+        From BHUNGANE to MaDlamini, with love and appreciation. 💖
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // CREATE FLOATING HEARTS
+
+        const heartsContainer = document.getElementById("hearts");
+
+        const heartSymbols = ["♡", "♥", "💕", "💗", "✧"];
+
+        for (let i = 0; i < 25; i++) {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            heart.textContent =
+                heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+
+            heart.style.left = Math.random() * 100 + "%";
+
+            heart.style.fontSize = (12 + Math.random() * 20) + "px";
+
+            heart.style.animationDuration = (8 + Math.random() * 12) + "s";
+
+            heart.style.animationDelay = (Math.random() * 10) + "s";
+
+            heartsContainer.appendChild(heart);
+        }
+
+
+        // REVEAL THE BIRTHDAY SURPRISE
+
+        function revealSurprise() {
+
+            const message = document.getElementById("surpriseMessage");
+
+            const button = document.getElementById("surpriseButton");
+
+            if (message.style.display === "block") {
+
+                message.style.display = "none";
+
+                button.textContent = "Open Your Surprise 🎁";
+
+            } else {
+
+                message.style.display = "block";
+
+                button.textContent = "Close Surprise 💗";
+
+                message.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+                // CREATE A LITTLE CELEBRATION
+
+                for (let i = 0; i < 18; i++) {
+
+                    const confetti = document.createElement("div");
+
+                    confetti.textContent = ["💗", "💕", "✨", "🌸", "💖"][
+                        Math.floor(Math.random() * 5)
+                    ];
+
+                    confetti.style.position = "fixed";
+
+                    confetti.style.left = Math.random() * 100 + "vw";
+
+                    confetti.style.top = "-30px";
+
+                    confetti.style.fontSize = "22px";
+
+                    confetti.style.zIndex = "9999";
+
+                    confetti.style.pointerEvents = "none";
+
+                    document.body.appendChild(confetti);
+
+                    const duration = 2000 + Math.random() * 2000;
+
+                    const animation = confetti.animate(
+                        [
+                            {
+                                transform: "translateY(0) rotate(0deg)",
+                                opacity: 1
+                            },
+                            {
+                                transform:
+                                    `translateY(${window.innerHeight + 100}px) rotate(720deg)`,
+                                opacity: 0
+                            }
+                        ],
+                        {
+                            duration: duration,
+                            easing: "ease-in"
+                        }
+                    );
+
+                    animation.onfinish = () => confetti.remove();
+                }
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+```
